@@ -14,7 +14,6 @@ export function addProduct(name, price) {
 
   card.appendChild(heading);
   card.appendChild(priceText);
-
   list.appendChild(card);
 }
 
@@ -61,4 +60,10 @@ export function wireButtons() {
   resetButton.addEventListener("click", () => {
     clearProducts();
   });
+}
+
+// Activate the buttons when running in a browser
+if (typeof window !== "undefined" &&
+    window.location.protocol === "file:") {
+  wireButtons();
 }
