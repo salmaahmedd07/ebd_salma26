@@ -55,3 +55,9 @@ export function wireForm() {
     clearForm();
   });
 }
+
+// Activate the form only when opened in a real browser
+if (typeof window !== "undefined" &&
+    window.location.protocol === "file:") {
+  wireForm();
+}
